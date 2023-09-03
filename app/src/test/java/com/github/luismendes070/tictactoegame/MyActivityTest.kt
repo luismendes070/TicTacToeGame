@@ -2,9 +2,11 @@ package com.github.luismendes070.tictactoegame
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Test
+import org.junit.runner.RunWith
 
 // Bard
-class MyActivityTest : AndroidJUnit4() {
+@RunWith(AndroidJUnit4::class)
+class MyActivityTest {
 
     @Test
     fun testButtonClick() {

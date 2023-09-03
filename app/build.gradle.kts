@@ -12,7 +12,7 @@ android {
         minSdk = 24
         targetSdk = 33
         versionCode = 1
-        versionName = "1.1"
+        versionName = "1.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,7 +43,10 @@ dependencies {
     // Bard
     implementation("androidx.test.ext:junit-ktx:1.1.5")
     // ChatGPT
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    implementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation(project(mapOf("path" to ":app")))
+    testImplementation(project(mapOf("path" to ":app")))
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.test:runner:1.4.0")
     androidTestImplementation("androidx.test:rules:1.4.0")
     implementation("androidx.core:core-ktx:1.10.1")
