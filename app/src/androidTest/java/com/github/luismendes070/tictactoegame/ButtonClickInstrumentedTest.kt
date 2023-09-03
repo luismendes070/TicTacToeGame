@@ -6,18 +6,14 @@ package com.github.luismendes070.tictactoegame
 
 // ChatGPT
 import androidx.test.espresso.Espresso
-import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import junit.framework.TestCase.fail
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.util.regex.Pattern.matches
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
@@ -36,6 +32,9 @@ class ButtonClickInstrumentedTest {
         // Espresso.onView(withId(R.id.button)).check(matches(withText("Clicked!")))
         // val assertion = (ViewAssertion) TextAssertion(expectedText = "Clicked!")
         // Espresso.onView(withId(R.id.button)).check(assertion)
-        fail()
+        // fail()
+        // Inside your Espresso test, use the custom TextAssertion
+        Espresso.onView(withId(R.id.button))
+            .check(TextAssertion())
     }
 }
