@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -21,10 +22,18 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var button: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        button = findViewById(R.id.button)
+
+        button.setOnClickListener(){
+            // Do something when the button is clicked
+            Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
+        }
 
         val gridLayout: GridLayout = findViewById(R.id.gridLayout)
 
