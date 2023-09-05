@@ -3,28 +3,24 @@ package com.github.luismendes070.tictactoegame
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.appcompat.app.AppCompatActivity
 import com.github.luismendes070.tictactoegame.databinding.ActivityMainBinding
+import com.github.luismendes070.tictactoegame.logic.TicTacToeGame
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var button: Button
+    private val ticTacToeGame = TicTacToeGame()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -67,6 +63,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun onCellClicked(row: Int, col: Int) {
         // Handle the cell click logic
+        ticTacToeGame.makeMove(row,col,'O')
+        // ticTacToeGame.makeMove(row,col,"X")
         println("[$row][$col]")
     }
 

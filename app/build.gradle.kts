@@ -45,6 +45,9 @@ android {
 
 dependencies {
 
+    //Baeldung https://www.baeldung.com/kotlin/ktlint-code-formatting
+    // implementation("org.jlleitschuh.gradle:ktlint-gradle:7.1.0")
+
     // Bard
     implementation("androidx.test.ext:junit-ktx:1.1.5")
     // ChatGPT

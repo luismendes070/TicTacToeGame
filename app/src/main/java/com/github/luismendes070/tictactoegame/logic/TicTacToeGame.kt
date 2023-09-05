@@ -6,26 +6,53 @@ class TicTacToeGame {
 
     // Function to check for a win condition
     fun checkWin(player: Char): Boolean {
-        // Check rows, columns, and diagonals
-        for (i in 0 until 3) {
-            if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
+        // Check for a win in rows, columns, and diagonals
+        for (row in 0 until 3) {
+            if (checkRowWin(player, row)) {
                 return true // Win in a row
             }
-            if (board[0][i] == player && board[1][i] == player && board[2][i] == player) {
+            if (checkColumnWin(player, row)) {
                 return true // Win in a column
             }
         }
-        if (board[0][0] == player && board[1][1] == player && board[2][2] == player) {
+        if (checkMainDiagonalWin(player)) {
             return true // Win in the main diagonal
         }
-        if (board[0][2] == player && board[1][1] == player && board[2][0] == player) {
+        if (checkAntiDiagonalWin(player)) {
             return true // Win in the anti-diagonal
         }
         return false
     }
 
+    private fun checkRowWin(player: Char, row: Int): Boolean {
+        return board[row][0] == player && board[row][1] == player && board[row][2] == player
+    }
+
+    private fun checkColumnWin(player: Char, column: Int): Boolean {
+        return board[0][column] == player && board[1][column] == player && board[2][column] == player
+    }
+
+    private fun checkMainDiagonalWin(player: Char): Boolean {
+        return board[0][0] == player && board[1][1] == player && board[2][2] == player
+    }
+
+    private fun checkAntiDiagonalWin(player: Char): Boolean {
+        return board[0][2] == player && board[1][1] == player && board[2][0] == player
+    }
+
+
     // Function to make a move
     fun makeMove(row: Int, col: Int, player: Char) {
-        board[row][col] = player
+
+        try{
+
+            board[row][col] = player
+
+        }catch (e:Exception){
+            e.printStackTrace()
+        }finally {
+
+        }
+
     }
 }
