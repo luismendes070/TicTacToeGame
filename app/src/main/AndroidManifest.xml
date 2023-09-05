@@ -13,6 +13,12 @@
         android:theme="@style/Theme.TicTacToeGame"
         tools:targetApi="31">
         <activity
+            android:name=".ui.board.BoardFullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_board_fullscreen"
+            android:theme="@style/Theme.TicTacToeGame.Fullscreen" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

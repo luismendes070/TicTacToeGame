@@ -1,4 +1,5 @@
 <resources>
+
     <style name="TicTacToeCellButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
@@ -6,6 +7,15 @@
         <item name="android:textSize">24sp</item>
         <item name="android:background">@drawable/tic_tac_toe_cell_bg</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.Theme.TicTacToeGame.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.TicTacToeGame.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 </resources>
 

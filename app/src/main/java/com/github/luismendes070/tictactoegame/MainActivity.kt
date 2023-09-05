@@ -1,6 +1,7 @@
 package com.github.luismendes070.tictactoegame
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -14,6 +15,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.appcompat.app.AppCompatActivity
 import com.github.luismendes070.tictactoegame.databinding.ActivityMainBinding
 import com.github.luismendes070.tictactoegame.logic.TicTacToeGame
+import com.github.luismendes070.tictactoegame.ui.board.BoardFullscreenActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -62,10 +64,38 @@ class MainActivity : AppCompatActivity() {
     } // end onCreate function
 
     private fun onCellClicked(row: Int, col: Int) {
-        // Handle the cell click logic
-        ticTacToeGame.makeMove(row,col,'O')
-        // ticTacToeGame.makeMove(row,col,"X")
-        println("[$row][$col]")
+
+        try{
+
+            val button00 = findViewById<Button>(R.id.button00)
+
+            button00.setOnClickListener {
+
+                // Handle the cell click logic
+                ticTacToeGame.makeMove(row,col,'O')
+                // ticTacToeGame.makeMove(row,col,"X")
+                println("[$row][$col]")
+
+                // Create an Intent with the current activity as the context and the target activity class.
+                val intent = Intent(this, BoardFullscreenActivity::class.java)
+
+// Optionally, you can pass data to the target activity using extras.
+                // intent.putExtra("key", "value")
+
+// Start the new activity.
+                startActivity(intent)
+
+
+            }
+
+        }catch (e:Exception){
+
+            e.printStackTrace()
+
+        }finally {
+
+        }
+
     }
 
     private fun resetGame() {
