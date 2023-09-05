@@ -7,6 +7,11 @@ android {
     namespace = "com.github.luismendes070.tictactoegame"
     compileSdk = 34
 
+    // Bard
+    packagingOptions {
+        exclude 'kotlin/internal/internal.kotlin_builtins'
+    }
+
     defaultConfig {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
