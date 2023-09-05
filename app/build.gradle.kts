@@ -8,9 +8,9 @@ android {
     compileSdk = 34
 
     // Bard
-    packagingOptions {
-        exclude 'kotlin/internal/internal.kotlin_builtins'
-    }
+    // packagingOptions {
+       // exclude 'kotlin/internal/internal.kotlin_builtins'
+    // }
 
     defaultConfig {
         applicationId = "com.github.luismendes070.tictactoegame"
