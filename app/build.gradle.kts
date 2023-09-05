@@ -11,8 +11,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 24
         targetSdk = 33
-        versionCode = 3
-        versionName = "1.4"
+        versionCode = 4
+        versionName = "1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,6 +43,7 @@ dependencies {
     // Bard
     implementation("androidx.test.ext:junit-ktx:1.1.5")
     // ChatGPT
+    ktlint "com.pinterest:ktlint:0.42.1"
     implementation("androidx.test.espresso:espresso-core:3.5.1")
     testImplementation(project(mapOf("path" to ":app")))
     testImplementation(project(mapOf("path" to ":app")))
