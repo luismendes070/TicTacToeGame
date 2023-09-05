@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId = "com.github.luismendes070.tictactoegame"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 33
-        versionCode = 5
-        versionName = "1.6"
+        versionCode = 6
+        versionName = "1.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

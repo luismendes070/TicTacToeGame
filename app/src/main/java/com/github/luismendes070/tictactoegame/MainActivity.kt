@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onCellClicked(row: Int, col: Int) {
         // Handle the cell click logic
+        println("[$row][$col]")
     }
 
     private fun resetGame() {
