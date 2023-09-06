@@ -41,6 +41,12 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    dependenciesInfo {
+        includeInApk = true
+        includeInBundle = true
+    }
+    buildToolsVersion = "34.0.0"
+    ndkVersion = "25.2.9519653"
 }
 
 dependencies {
@@ -51,7 +57,7 @@ dependencies {
     // Bard
     implementation("androidx.test.ext:junit-ktx:1.1.5")
     // ChatGPT
-    implementation("com.pinterest:ktlint:0.42.1")
+    implementation("com.pinterest:ktlint:0.50.0")
     implementation("androidx.test.espresso:espresso-core:3.5.1")
     testImplementation(project(mapOf("path" to ":app")))
     testImplementation(project(mapOf("path" to ":app")))
