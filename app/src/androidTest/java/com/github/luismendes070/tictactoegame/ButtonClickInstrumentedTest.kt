@@ -26,7 +26,7 @@ class ButtonClickInstrumentedTest {
     @Test
     fun testButtonClick() {
         // Find the button by its ID and perform a click action
-        Espresso.onView(withId(R.id.button)).perform(click())
+        Espresso.onView(withId(R.id.btnPlay)).perform(click())
 
         // Verify that the expected text appears on the screen
         // Espresso.onView(withId(R.id.button)).check(matches(withText("Clicked!")))
@@ -34,7 +34,7 @@ class ButtonClickInstrumentedTest {
         // Espresso.onView(withId(R.id.button)).check(assertion)
         // fail()
         // Inside your Espresso test, use the custom TextAssertion
-        Espresso.onView(withId(R.id.button))
+        Espresso.onView(withId(R.id.btnPlay))
             .check(TextAssertion())
     }
 }

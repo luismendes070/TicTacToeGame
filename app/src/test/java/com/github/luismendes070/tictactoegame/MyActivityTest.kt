@@ -21,7 +21,7 @@ class MyActivityTest {
     @Test
     fun testButtonClick() {
         // Find the button in the layout
-        val button = onView(withId(R.id.button))
+        val button = onView(withId(R.id.btnPlay))
 
         // Click the button
         button.perform(click())

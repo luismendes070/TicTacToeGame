@@ -7,6 +7,11 @@ android {
     namespace = "com.github.luismendes070.tictactoegame"
     compileSdk = 34
 
+    // BingChat
+    // resourcesPackagingOptions {
+       // excludes.add("META-INF/LICENSE")
+    // }
+
     // Bard
     // packagingOptions {
        // exclude 'kotlin/internal/internal.kotlin_builtins'
@@ -16,8 +21,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 7
-        versionName = "1.8"
+        versionCode = 8
+        versionName = "1.15"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -59,7 +64,6 @@ dependencies {
     // ChatGPT
     implementation("com.pinterest:ktlint:0.50.0")
     implementation("androidx.test.espresso:espresso-core:3.5.1")
-    testImplementation(project(mapOf("path" to ":app")))
     testImplementation(project(mapOf("path" to ":app")))
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.test:runner:1.5.2")

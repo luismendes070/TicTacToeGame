@@ -1,24 +1,35 @@
 package com.github.luismendes070.tictactoegame
 
-import android.content.ContentValues.TAG
-import android.content.Intent
+// Bard sdk 34 permissions
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
 import android.view.View
 import android.widget.Button
-import android.widget.GridLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+
+import android.content.ContentValues.TAG
+import android.content.Intent
+import android.view.MenuItem
+import android.widget.GridLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.appcompat.app.AppCompatActivity
 import com.github.luismendes070.tictactoegame.databinding.ActivityMainBinding
 import com.github.luismendes070.tictactoegame.logic.TicTacToeGame
 import com.github.luismendes070.tictactoegame.ui.board.BoardFullscreenActivity
 
 class MainActivity : AppCompatActivity() {
 
+    // Bard sdk 34 permissions
+    private lateinit var btnPlay: Button
+    private lateinit var btnLicenses: Button
+
+    // ChatGPT
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var button: Button
@@ -31,27 +42,50 @@ class MainActivity : AppCompatActivity() {
             super.onCreate(savedInstanceState)
             setContentView(binding.root)
 
-            button = findViewById(R.id.button)
+            // Bard sdk 34 permissions
+            btnPlay = findViewById(R.id.btnPlay)
 
-            button.setOnClickListener(){
-                // Do something when the button is clicked
-                Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
-            }
+            btnPlay.setOnClickListener {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 100)
 
-            val gridLayout: GridLayout = findViewById(R.id.gridLayout)
+                } else {
+                    startGame()
 
-            for (row in 0 until gridLayout.rowCount) {
-                for (col in 0 until gridLayout.columnCount) {
-                    val cellButton = Button(this)
-                    cellButton.id = View.generateViewId()
-                    cellButton.setBackgroundResource(R.drawable.tic_tac_toe_cell_bg)
-                    cellButton.setOnClickListener { onCellClicked(row, col) }
-                    gridLayout.addView(cellButton)
+                    // Do something when the button is clicked
+                    Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
+
+                    val gridLayout: GridLayout = findViewById(R.id.gridLayout)
+
+                    for (row in 0 until gridLayout.rowCount) {
+                        for (col in 0 until gridLayout.columnCount) {
+                            val cellButton = Button(this)
+                            cellButton.id = View.generateViewId()
+                            cellButton.setBackgroundResource(R.drawable.tic_tac_toe_cell_bg)
+                            cellButton.setOnClickListener { onCellClicked(row, col) }
+                            gridLayout.addView(cellButton)
+                        }
+                    }
+
+                    val resetButton: Button = findViewById(R.id.resetButton)
+                    resetButton.setOnClickListener { resetGame() }
+
+                    btnLicenses = findViewById(R.id.btnLicenses)
+                    btnLicenses.setOnClickListener {
+
+                        // Create an Intent with the current activity as the context and the target activity class.
+                        val intent = Intent(this, LicensesScrollingActivity::class.java)
+
+// Optionally, you can pass data to the target activity using extras.
+                        // intent.putExtra("key", "value")
+
+// Start the new activity.
+                        startActivity(intent)
+
+                    }
+
                 }
             }
-
-            val resetButton: Button = findViewById(R.id.resetButton)
-            resetButton.setOnClickListener { resetGame() }
 
         }catch (e:Exception){
 
@@ -62,6 +96,20 @@ class MainActivity : AppCompatActivity() {
         }
 
     } // end onCreate function
+
+    // Bard sdk 34 permissions
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 100 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            startGame()
+        } else {
+            Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun startGame() {
+        Log.d("MainActivity", "Game started")
+    }
 
     private fun onCellClicked(row: Int, col: Int) {
 

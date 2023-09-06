@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToeGame"
         tools:targetApi="31">
+        <activity
+            android:name=".LicensesScrollingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_licenses_scrolling"
+            android:theme="@style/Theme.TicTacToeGame.NoActionBar" />
         <activity
             android:name=".ui.board.BoardFullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
