@@ -38,13 +38,13 @@ class BoardFullscreenActivity : AppCompatActivity() {
             // Note that some of these constants are new as of API 16 (Jelly Bean)
             // and API 19 (KitKat). It is safe to use them, as they are inlined
             // at compile-time and do nothing on earlier devices.
-            fullscreenContent.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LOW_PROFILE or
-                        View.SYSTEM_UI_FLAG_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            /*            fullscreenContent.systemUiVisibility =
+                            View.SYSTEM_UI_FLAG_LOW_PROFILE or
+                                    View.SYSTEM_UI_FLAG_FULLSCREEN or
+                                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+                                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+                                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
+                                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION*/
         }
     }
     private val showPart2Runnable = Runnable {
@@ -77,7 +77,7 @@ class BoardFullscreenActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        try{
+        try {
 
             super.onCreate(savedInstanceState)
 
@@ -99,15 +99,15 @@ class BoardFullscreenActivity : AppCompatActivity() {
             // while interacting with the UI.
             binding.dummyButton.setOnTouchListener(delayHideTouchListener)
 
-            val tableLayout = findViewById<TableLayout>(R.id.tableLayout)
-            val button00 = findViewById<Button>(R.id.button00)
+            // val tableLayout = findViewById<TableLayout>(R.id.tableLayout)
+            // val button00 = findViewById<Button>(R.id.button00)
 
 
-        }catch (e:Exception){
+        } catch (e: Exception) {
 
             e.printStackTrace()
 
-        }finally {
+        } finally {
 
         }
 
@@ -131,26 +131,63 @@ class BoardFullscreenActivity : AppCompatActivity() {
         }
     }
 
+    // ChatGPT
     private fun checkForWin(row: Int, col: Int): Boolean {
-        // Implement your win-checking logic here
-        // Check for rows, columns, and diagonals
-        return false
+        try {
+            // Implement your win-checking logic here
+            // Check for rows, columns, and diagonals
+            if(board[0][0] == board[0][1] && board[0][1] == board[0][2]){
+                return true
+            }
+            else if(board[1][0] == board[1][1] && board[1][1] == board[1][2]){
+                return true
+            }
+            else if(board[2][0] == board[2][1] && board[2][1] == board[2][2]){
+                return true
+            }
+
+                // columns
+
+            else if(board[0][0] == board[1][0] && board[1][0] == board[2][0]){
+                return true
+            }
+            else if(board[0][1] == board[1][1] && board[1][1] == board[2][1]){
+                return true
+            }
+            else if(board[0][2] == board[1][2] && board[1][2] == board[2][2]){
+                return true
+            }
+
+                // diagonals
+
+            else if(board[0][0] == board[1][1] && board[1][1] == board[2][2]){
+                return true
+            }
+            else if(board[2][0] == board[1][1] && board[1][1] == board[0][2]){
+                return true
+            }
+            else return false // Placeholder return value
+        } catch (e: Exception) {
+            e.printStackTrace()
+            // Handle the exception if needed
+            return false // Or another appropriate return value
+        }
     }
+
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
-
-        try{
+        try {
 
             // Trigger the initial hide() shortly after the activity has been
             // created, to briefly hint to the user that UI controls
             // are available.
             delayedHide(100)
 
-        }catch (e:Exception){
+        } catch (e: Exception) {
 
-        }finally {
+        } finally {
 
         }
 
@@ -158,7 +195,7 @@ class BoardFullscreenActivity : AppCompatActivity() {
 
     private fun toggle() {
 
-        try{
+        try {
 
             if (isFullscreen) {
                 hide()
@@ -166,9 +203,9 @@ class BoardFullscreenActivity : AppCompatActivity() {
                 show()
             }
 
-        }catch (e:Exception){
+        } catch (e: Exception) {
 
-        }finally {
+        } finally {
 
         }
 
@@ -176,7 +213,7 @@ class BoardFullscreenActivity : AppCompatActivity() {
 
     private fun hide() {
 
-        try{
+        try {
 
             // Hide UI first
             supportActionBar?.hide()
@@ -187,9 +224,9 @@ class BoardFullscreenActivity : AppCompatActivity() {
             hideHandler.removeCallbacks(showPart2Runnable)
             hideHandler.postDelayed(hidePart2Runnable, UI_ANIMATION_DELAY.toLong())
 
-        }catch (e:Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
-        }finally {
+        } finally {
 
         }
 
@@ -204,9 +241,9 @@ class BoardFullscreenActivity : AppCompatActivity() {
                     WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars()
                 )
             } else {
-                fullscreenContent.systemUiVisibility =
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                // fullscreenContent.systemUiVisibility =
+                //  View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                //  View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
             }
             isFullscreen = true
 
