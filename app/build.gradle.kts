@@ -21,8 +21,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 9
-        versionName = "1.16"
+        versionCode = 10
+        versionName = "1.17"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,6 +55,10 @@ android {
 }
 
 dependencies {
+
+    // Kotlin Flow Producer-Consumer Two Screens https://youtu.be/0G_1XCRlpYM
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-test
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 
     //Baeldung https://www.baeldung.com/kotlin/ktlint-code-formatting
     // implementation("org.jlleitschuh.gradle:ktlint-gradle:7.1.0")
