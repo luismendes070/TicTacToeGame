@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    // not found
+    // id("com.gradle.enterprise")
 }
 
 android {
@@ -21,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 12
-        versionName = "1.19"
+        versionCode = 13
+        versionName = "1.20"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -67,7 +69,8 @@ dependencies {
     // implementation("org.jlleitschuh.gradle:ktlint-gradle:7.1.0")
 
     // Bard
-    implementation("org.gradle.enterprise:gradle-enterprise-gradle-plugin:3.13")
+    // Failed to resolve
+    //implementation("org.gradle.enterprise:gradle-enterprise-gradle-plugin:3.5.1") // mavenCentral
     implementation("androidx.test.ext:junit-ktx:1.1.5")
     // ChatGPT
     implementation("com.pinterest:ktlint:0.50.0")

@@ -1,4 +1,4 @@
-package com.github.luismendes070.tictactoegame
+package com.github.luismendes070.tictactoegame.ui
 
 // Bard sdk 34 permissions
 import android.Manifest
@@ -19,6 +19,7 @@ import android.widget.GridLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
+import com.github.luismendes070.tictactoegame.R
 import com.github.luismendes070.tictactoegame.databinding.ActivityMainBinding
 import com.github.luismendes070.tictactoegame.logic.TicTacToeGame
 import com.github.luismendes070.tictactoegame.ui.board.BoardFullscreenActivity
@@ -31,7 +32,9 @@ class MainActivity : AppCompatActivity() {
 
     // ChatGPT
     private lateinit var appBarConfiguration: AppBarConfiguration
+
     private lateinit var binding: ActivityMainBinding
+
     private lateinit var button: Button
     private val ticTacToeGame = TicTacToeGame()
 
@@ -40,12 +43,15 @@ class MainActivity : AppCompatActivity() {
         try{
 
             super.onCreate(savedInstanceState)
+            // View Binding - 🔄 CONECTA VISTAS en Android con Kotlin - Tutorial Android Studio en
+            // español https://youtu.be/yE2Y2q4iWpU
+            binding = ActivityMainBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
             // Bard sdk 34 permissions
-            btnPlay = findViewById(R.id.btnPlay)
+            // btnPlay = findViewById(R.id.btnPlay)
 
-            btnPlay.setOnClickListener {
+            binding.btnPlay.setOnClickListener {
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 100)
 

@@ -15,7 +15,7 @@
         android:theme="@style/Theme.TicTacToeGame"
         tools:targetApi="31">
         <activity
-            android:name=".LicensesScrollingActivity"
+            android:name=".ui.LicensesScrollingActivity"
             android:exported="false"
             android:label="@string/title_activity_licenses_scrolling"
             android:theme="@style/Theme.TicTacToeGame.NoActionBar" />
@@ -26,7 +26,7 @@
             android:label="@string/title_activity_board_fullscreen"
             android:theme="@style/Theme.TicTacToeGame.Fullscreen" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:resizeableActivity="true"
