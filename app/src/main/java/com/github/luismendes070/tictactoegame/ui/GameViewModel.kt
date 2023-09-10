@@ -20,9 +20,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.github.luismendes070.data.MAX_NO_OF_WORDS
-import com.github.luismendes070.data.SCORE_INCREASE
-import com.github.luismendes070.data.allWords
+import com.github.luismendes070.tictactoegame.data.MAX_NO_OF_WORDS
+import com.github.luismendes070.tictactoegame.data.SCORE_INCREASE
+import com.github.luismendes070.tictactoegame.data.allWords
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

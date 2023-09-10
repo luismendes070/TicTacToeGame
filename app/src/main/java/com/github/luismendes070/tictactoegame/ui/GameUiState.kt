@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.unscramble.ui
+package com.github.luismendes070.tictactoegame.ui
 
 /**
  * Data class that represents the game UI state
