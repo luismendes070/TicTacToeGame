@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.luismendes070.tictactoe.ui
+package com.github.luismendes070.tictactoegame.ui
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -23,6 +23,7 @@ import androidx.lifecycle.ViewModel
 import com.github.luismendes070.tictactoegame.data.MAX_NO_OF_WORDS
 import com.github.luismendes070.tictactoegame.data.SCORE_INCREASE
 import com.github.luismendes070.tictactoegame.data.allWords
+import com.github.luismendes070.tictactoegame.ui.GameUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
