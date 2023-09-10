@@ -1,8 +1,8 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    // not found
-    // id("com.gradle.enterprise")
+    // id("org.jetbrains.kotlin.android")
+    kotlin("android") // Plugin with id 'org.jetbrains.kotlin.android' was already requested at line 1
+    // id("com.gradle.enterprise")// not found
 }
 
 android {
@@ -23,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 15
-        versionName = "1.23"
+        versionCode = 16
+        versionName = "1.24"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -48,12 +48,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    composeOptions{
+        kotlinCompilerExtensionVersion = "1.2.0"
+    }
     dependenciesInfo {
         includeInApk = true
         includeInBundle = true
     }
     buildToolsVersion = "34.0.0"
     ndkVersion = "25.2.9519653"
+
 }
 
 dependencies {
