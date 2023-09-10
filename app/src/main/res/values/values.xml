@@ -8,7 +8,7 @@
         <attr name="android:id"/>
         <attr name="android:tag"/>
     </declare-styleable>
-    <declare-styleable name="FragmentContainerView">
+    <declare-styleable name="com.github.luismendes070.tictactoegame.ui.board.FragmentContainerView">
         <attr name="android:name"/>
         <attr name="android:tag"/>
     </declare-styleable>

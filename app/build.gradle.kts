@@ -23,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 13
-        versionName = "1.20"
+        versionCode = 14
+        versionName = "1.21"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -75,6 +75,7 @@ dependencies {
     // ChatGPT
     implementation("com.pinterest:ktlint:0.50.0")
     implementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     testImplementation(project(mapOf("path" to ":app")))
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.test:runner:1.5.2")
