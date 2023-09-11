@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var button: Button
     private val ticTacToeGame = TicTacToeGame()
 
+    @Suppress("UNCHECKED_CAST")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         try{
@@ -104,6 +105,7 @@ class MainActivity : AppCompatActivity() {
     } // end onCreate function
 
     // Bard sdk 34 permissions
+    @Suppress("UNCHECKED_CAST")
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 100 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -113,10 +115,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun startGame() {
         Log.d("MainActivity", "Game started")
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun onCellClicked(row: Int, col: Int) {
 
         try{
@@ -152,12 +156,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun resetGame() {
         // Reset the game logic and UI
     }
 
 
     // ChatGPT
+    @Suppress("UNCHECKED_CAST")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         try {
             when (item.itemId) {
@@ -177,6 +183,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @Suppress("UNCHECKED_CAST")
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
