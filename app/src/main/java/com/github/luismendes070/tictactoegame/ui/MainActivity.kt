@@ -94,7 +94,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-        }catch (e:Exception){
+        }
+        catch (e: java.lang.IllegalStateException){
+            e.printStackTrace()
+        }
+        catch (e:Exception){
 
             e.printStackTrace()
 
