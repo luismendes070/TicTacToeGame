@@ -23,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 16
-        versionName = "1.24"
+        versionCode = 18
+        versionName = "1.26"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
