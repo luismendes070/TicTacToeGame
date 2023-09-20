@@ -57,16 +57,22 @@ enum class Player { X, O, EMPTY }
 
 @Composable
 fun TicTacToeGrid(cells: List<Player>, onCellClick: (Int) -> Unit) {
-/*    LazyVerticalGrid(
-        cells = cells,
-        cellContent = { player, index ->
-            GridCell(player) {
-                onCellClick(index)
-            }
-        },
-        cellsInRow = 3
-    )*/
+    try {
+        LazyVerticalGrid(
+            cells = cells,
+            cellContent = { player, index ->
+                GridCell(player) {
+                    onCellClick(index)
+                }
+            },
+            cellsInRow = 3
+        )
+    } catch (e: Exception) {
+        // Handle the exception here
+        e.printStackTrace()
+    }
 }
+
 
 @Composable
 fun GridCell(player: Player, onCellClick: () -> Unit) {
@@ -76,13 +82,19 @@ fun GridCell(player: Player, onCellClick: () -> Unit) {
             .clickable(onClick = onCellClick)
             .background(Color.Gray)
     ) {
-        when (player) {
-            Player.X -> "X" // Icon(m3Icon(M3Icons.X), contentDescription = null)
-            Player.O -> "O" // Icon(m3Icon(M3Icons.Zero), contentDescription = null)
-            Player.EMPTY -> { /* No icon */}
+        try {
+            when (player) {
+                Player.X -> Icon(m3Icon(M3Icons.X), contentDescription = null)
+                Player.O -> Icon(m3Icon(M3Icons.Zero), contentDescription = null)
+                Player.EMPTY -> { /* No icon */}
+            }
+        } catch (e: Exception) {
+            // Handle the exception here
+            e.printStackTrace()
         }
     }
 }
+
 
 
 
