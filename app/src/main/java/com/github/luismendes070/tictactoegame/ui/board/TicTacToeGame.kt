@@ -1,15 +1,22 @@
 package com.github.luismendes070.tictactoegame.ui.board
 
+import androidx.compose.ui.graphics.Color
+// import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+
+// Bard
+// import androidx.compose.material.MaterialTheme
+// import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Color
+// import androidx.compose.material3.Color
 import androidx.compose.material3.Icon
+// Bard
 import androidx.compose.material3.icons.M3Icons
 import androidx.compose.material3.icons.M3Icons.Cross
 import androidx.compose.material3.icons.M3Icons.RadioButtonUnchecked
@@ -49,6 +56,19 @@ import kotlin.math.roundToInt
 enum class Player { X, O, EMPTY }
 
 @Composable
+fun TicTacToeGrid(cells: List<Player>, onCellClick: (Int) -> Unit) {
+    LazyVerticalGrid(
+        cells = cells,
+        cellContent = { player, index ->
+            GridCell(player) {
+                onCellClick(index)
+            }
+        },
+        cellsInRow = 3
+    )
+}
+
+@Composable
 fun GridCell(player: Player, onCellClick: () -> Unit) {
     Box(
         modifier = Modifier
@@ -64,18 +84,7 @@ fun GridCell(player: Player, onCellClick: () -> Unit) {
     }
 }
 
-@Composable
-fun TicTacToeGrid(cells: List<Player>, onCellClick: (Int) -> Unit) {
-    LazyVerticalGrid(
-        cells = cells,
-        cellContent = { player, index ->
-            GridCell(player) {
-                onCellClick(index)
-            }
-        },
-        cellsInRow = 3
-    )
-}
+
 
 @Composable
 fun TicTacToeGame() {

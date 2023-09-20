@@ -23,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 21
-        versionName = "1.29"
+        versionCode = 22
+        versionName = "1.30"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -62,6 +62,8 @@ android {
 
 dependencies {
 
+    // Bard
+    implementation("androidx.compose.material3:material3-icons:1.0.0-alpha14")
     // Bard LazyVerticalGrid
     implementation("androidx.compose.foundation:foundation-lazy:1.3.1")
 
