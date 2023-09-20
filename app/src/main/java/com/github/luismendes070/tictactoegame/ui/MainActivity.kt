@@ -1,5 +1,6 @@
 package com.github.luismendes070.tictactoegame.ui
 
+import com.github.luismendes070.tictactoegame.ui.board.Sample;
 // Bard sdk 34 permissions
 import android.Manifest
 import android.content.pm.PackageManager
@@ -23,6 +24,7 @@ import com.github.luismendes070.tictactoegame.R
 import com.github.luismendes070.tictactoegame.databinding.ActivityMainBinding
 import com.github.luismendes070.tictactoegame.logic.TicTacToeGame
 import com.github.luismendes070.tictactoegame.ui.board.BoardFullscreenActivity
+import com.github.luismendes070.tictactoegame.ui.board.Sample
 
 class MainActivity : AppCompatActivity() {
 
@@ -122,13 +124,10 @@ class MainActivity : AppCompatActivity() {
     @Suppress("UNCHECKED_CAST")
     private fun startGame() {
         Log.d("MainActivity", "Game started")
-        try{
-            val ticTacToeGame = TicTacToeGame()
-        }catch (e:Exception){
-            e.printStackTrace()
-        }finally {
 
-        }
+        // val ticTacToeGame = TicTacToeGame()
+        val sample = Sample()
+
     }
 
     @Suppress("UNCHECKED_CAST")

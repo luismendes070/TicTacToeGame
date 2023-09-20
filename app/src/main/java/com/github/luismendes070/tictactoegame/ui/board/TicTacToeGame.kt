@@ -1,5 +1,13 @@
 package com.github.luismendes070.tictactoegame.ui.board
 
+
+
+// BingChat
+import androidx.compose.foundation.lazy.GridCells
+import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
+
 import androidx.compose.ui.graphics.Color
 // import android.graphics.Color
 import android.os.Bundle
@@ -8,6 +16,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 
 // Bard
@@ -35,6 +44,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.icons.M3Icons
 import androidx.compose.material3.icons.m3Icon*/
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 /*import androidx.compose.material3.Surface
 import androidx.compose.material3.icons.M3Icons
 import androidx.compose.material3.icons.m3Icon*/
@@ -55,19 +65,23 @@ import kotlin.math.roundToInt
 
 enum class Player { X, O, EMPTY }
 
+@Preview
 @Composable
 @Throws(Exception::class)
-fun TicTacToeGrid(cells: List<Player>, onCellClick: (Int) -> Unit) {
-    LazyVerticalGrid(
-        items = cells,
-        cellContent = { player -> Player
-            GridCell(player) {
-                onCellClick(cells.indexOf(player))
+fun LazyVerticalGridExample(cells: List<Player>, onCellClick: (Int) -> Unit) {
+    val rows = 3
+    val columns = 3
+
+    LazyVerticalGrid(cells = GridCells.Fixed(columns)) {
+        items(rows * columns) { index ->
+            // Replace this with your own item content
+            Box(Modifier.padding(4.dp)) {
+                Text(text = "Item ${index + 1}")
             }
-        },
-        cellsInRow = 3
-    )
+        }
+    }
 }
+
 
 
 
