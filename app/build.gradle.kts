@@ -23,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 20
-        versionName = "1.28"
+        versionCode = 21
+        versionName = "1.29"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -61,6 +61,9 @@ android {
 }
 
 dependencies {
+
+    // Bard LazyVerticalGrid
+    implementation("androidx.compose.foundation:foundation-lazy:1.3.1")
 
     // https://github.com/luismendes070/basic-android-kotlin-compose-training-unscramble
     implementation(platform("androidx.compose:compose-bom:2023.09.00"))
