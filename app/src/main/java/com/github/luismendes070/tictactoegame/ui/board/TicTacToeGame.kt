@@ -17,7 +17,7 @@ import androidx.compose.material3.Surface
 // import androidx.compose.material3.Color
 import androidx.compose.material3.Icon
 // Bard
-import androidx.compose.material3.icons.M3Icons
+/*import androidx.compose.material3.icons.M3Icons
 import androidx.compose.material3.icons.M3Icons.Cross
 import androidx.compose.material3.icons.M3Icons.RadioButtonUnchecked
 import androidx.compose.material3.icons.M3Icons.Remove
@@ -33,22 +33,22 @@ import androidx.compose.material3.icons.Icon
 import androidx.compose.material3.icons.m3Icon
 import androidx.compose.material3.Icon
 import androidx.compose.material3.icons.M3Icons
-import androidx.compose.material3.icons.m3Icon
+import androidx.compose.material3.icons.m3Icon*/
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+/*import androidx.compose.material3.Surface
 import androidx.compose.material3.icons.M3Icons
-import androidx.compose.material3.icons.m3Icon
+import androidx.compose.material3.icons.m3Icon*/
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+/*import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.layout.Placeable
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalDensity.currentDensity
 import androidx.compose.ui.platform.LocalDensity.currentScale
 import androidx.compose.ui.platform.LocalDensity.currentTransform
-import androidx.compose.ui.platform.LocalDensity.currentWidth
+import androidx.compose.ui.platform.LocalDensity.currentWidth*/
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlin.math.roundToInt
@@ -57,7 +57,7 @@ enum class Player { X, O, EMPTY }
 
 @Composable
 fun TicTacToeGrid(cells: List<Player>, onCellClick: (Int) -> Unit) {
-    LazyVerticalGrid(
+/*    LazyVerticalGrid(
         cells = cells,
         cellContent = { player, index ->
             GridCell(player) {
@@ -65,7 +65,7 @@ fun TicTacToeGrid(cells: List<Player>, onCellClick: (Int) -> Unit) {
             }
         },
         cellsInRow = 3
-    )
+    )*/
 }
 
 @Composable
@@ -77,8 +77,8 @@ fun GridCell(player: Player, onCellClick: () -> Unit) {
             .background(Color.Gray)
     ) {
         when (player) {
-            Player.X -> Icon(m3Icon(M3Icons.X), contentDescription = null)
-            Player.O -> Icon(m3Icon(M3Icons.Zero), contentDescription = null)
+            Player.X -> "X" // Icon(m3Icon(M3Icons.X), contentDescription = null)
+            Player.O -> "O" // Icon(m3Icon(M3Icons.Zero), contentDescription = null)
             Player.EMPTY -> { /* No icon */}
         }
     }

@@ -122,6 +122,13 @@ class MainActivity : AppCompatActivity() {
     @Suppress("UNCHECKED_CAST")
     private fun startGame() {
         Log.d("MainActivity", "Game started")
+        try{
+            val ticTacToeGame = TicTacToeGame()
+        }catch (e:Exception){
+            e.printStackTrace()
+        }finally {
+
+        }
     }
 
     @Suppress("UNCHECKED_CAST")
