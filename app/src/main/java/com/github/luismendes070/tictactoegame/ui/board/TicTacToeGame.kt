@@ -56,22 +56,19 @@ import kotlin.math.roundToInt
 enum class Player { X, O, EMPTY }
 
 @Composable
+@Throws(Exception::class)
 fun TicTacToeGrid(cells: List<Player>, onCellClick: (Int) -> Unit) {
-    try {
-        LazyVerticalGrid(
-            cells = cells,
-            cellContent = { player, index ->
-                GridCell(player) {
-                    onCellClick(index)
-                }
-            },
-            cellsInRow = 3
-        )
-    } catch (e: Exception) {
-        // Handle the exception here
-        e.printStackTrace()
-    }
+    LazyVerticalGrid(
+        items = cells,
+        cellContent = { player -> Player
+            GridCell(player) {
+                onCellClick(cells.indexOf(player))
+            }
+        },
+        cellsInRow = 3
+    )
 }
+
 
 
 @Composable
