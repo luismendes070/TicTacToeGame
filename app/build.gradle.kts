@@ -23,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 29
-        versionName = "1.36"
+        versionCode = 30
+        versionName = "1.37"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -105,6 +105,8 @@ dependencies {
     // implementation("org.jlleitschuh.gradle:ktlint-gradle:7.1.0")
 
     // Bard
+    testImplementation("androidx.test.ext:junit:1.1.3")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
     // Failed to resolve
     //implementation("org.gradle.enterprise:gradle-enterprise-gradle-plugin:3.5.1") // mavenCentral
     implementation("androidx.test.ext:junit-ktx:1.1.5")
