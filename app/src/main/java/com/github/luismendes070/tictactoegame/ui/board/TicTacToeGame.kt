@@ -82,6 +82,19 @@ fun LazyVerticalGridExample(cells: List<Player>, onCellClick: (Int) -> Unit) {
     }
 }
 
+fun createLazyVerticalGrid(
+    rowCount: Int,
+    columnCount: Int,
+    itemHeight: Dp,
+    itemWidth: Dp
+): LazyVerticalGrid {
+    return LazyVerticalGrid(
+        rowCount = rowCount,
+        columnCount = columnCount,
+        itemHeight = itemHeight,
+        itemWidth = itemWidth
+    )
+}
 
 
 
