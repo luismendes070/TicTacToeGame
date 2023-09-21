@@ -73,9 +73,9 @@ dependencies {
 
     // Bard
     implementation("androidx.compose.ui:ui-test-junit4-android:1.2.1")
-    implementation("androidx.compose.material3:material3-icons:1.0.0-alpha14")
+    implementation("androidx.compose.material3:material3-icons:1.1.2")
     // Bard LazyVerticalGrid
-    implementation("androidx.compose.foundation:foundation-lazy:1.3.1")
+    implementation("androidx.compose.foundation:foundation-lazy:1.5.1")
 
     // https://github.com/luismendes070/basic-android-kotlin-compose-training-unscramble
     implementation(platform("androidx.compose:compose-bom:2023.09.00"))
