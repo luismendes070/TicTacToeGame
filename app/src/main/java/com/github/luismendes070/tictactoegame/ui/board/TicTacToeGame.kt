@@ -61,6 +61,7 @@ import androidx.compose.ui.platform.LocalDensity.currentTransform
 import androidx.compose.ui.platform.LocalDensity.currentWidth*/
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.github.luismendes070.tictactoegame.logic.TicTacToeGame
 import kotlin.math.roundToInt
 
 enum class Player { X, O, EMPTY }
@@ -72,14 +73,12 @@ fun LazyVerticalGridExample(cells: List<Player>, onCellClick: (Int) -> Unit) {
     val rows = 3
     val columns = 3
 
-    LazyVerticalGrid(cells = GridCells.Fixed(columns)) {
-        items(rows * columns) { index ->
-            // Replace this with your own item content
-            Box(Modifier.padding(4.dp)) {
-                Text(text = "Item ${index + 1}")
-            }
-        }
-    }
+    val lazyVerticalGrid: TicTacToeGame = createLazyVerticalGrid(
+        rowCount = 3,
+        columnCount = 3,
+        itemHeight = 100.dp,
+        itemWidth = 100.dp
+    )
 }
 
 fun createLazyVerticalGrid(
