@@ -17,6 +17,7 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.view.MenuItem
 import android.widget.GridLayout
+import androidx.compose.runtime.Composable
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
     private val ticTacToeGame = TicTacToeGame()
 
     @Suppress("UNCHECKED_CAST")
+    @Composable
     override fun onCreate(savedInstanceState: Bundle?) {
 
         try{
@@ -112,6 +114,7 @@ class MainActivity : AppCompatActivity() {
 
     // Bard sdk 34 permissions
     @Suppress("UNCHECKED_CAST")
+    @Composable
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 100 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -122,6 +125,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @Suppress("UNCHECKED_CAST")
+    @Composable
     private fun startGame() {
         Log.d("MainActivity", "Game started")
 
