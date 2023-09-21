@@ -23,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 28
-        versionName = "1.35"
+        versionCode = 29
+        versionName = "1.36"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -62,7 +62,17 @@ android {
 
 dependencies {
 
+    // docs expresso https://developer.android.com/training/testing/espresso/setup#kts
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("androidx.test:runner:1.4.0")
+    androidTestImplementation("androidx.test:rules:1.4.0")
+
+    // docs https://developer.android.com/training/testing/instrumented-tests
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test:rules:1.5.0")
+
     // Bard
+    implementation("androidx.compose.ui:ui-test-junit4-android:1.2.1")
     implementation("androidx.compose.material3:material3-icons:1.0.0-alpha14")
     // Bard LazyVerticalGrid
     implementation("androidx.compose.foundation:foundation-lazy:1.3.1")
@@ -77,6 +87,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    implementation("androidx.compose.ui:ui-test-junit4-android:1.5.1")
 
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     debugImplementation("androidx.compose.ui:ui-tooling")
