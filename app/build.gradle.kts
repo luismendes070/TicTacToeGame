@@ -23,8 +23,8 @@ android {
         applicationId = "com.github.luismendes070.tictactoegame"
         minSdk = 26
         targetSdk = 34
-        versionCode = 32
-        versionName = "1.39"
+        versionCode = 33
+        versionName = "1.40"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -73,7 +73,11 @@ dependencies {
 
     // Bard
     implementation("androidx.compose.ui:ui-test-junit4-android:1.2.1")
-    implementation("androidx.compose.material3:material3-icons:1.1.2")
+
+    // https://mvnrepository.com/artifact/androidx.compose.material/material-icons-core
+    runtimeOnly("androidx.compose.material:material-icons-core:1.5.1")
+
+    // implementation("androidx.compose.material3:material3-icons:1.1.2")
     // Bard LazyVerticalGrid
     implementation("androidx.compose.foundation:foundation-lazy:1.5.1")
 
