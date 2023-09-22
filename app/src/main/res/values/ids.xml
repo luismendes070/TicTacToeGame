@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="btnLicenses" type="id">Licenses</item>
+    <item name="grid_item_11" type="id" />
+    <item name="grid_item_12" type="id" />
+    <item name="grid_item_13" type="id" />
+    <item name="grid_item_21" type="id" />
+    <item name="grid_item_22" type="id" />
+    <item name="grid_item_23" type="id" />
+    <item name="grid_item_31" type="id" />
+    <item name="grid_item_32" type="id" />
+    <item name="grid_item_33" type="id" />
+    <item name="text_view_winner" type="id" >winner</item>
 </resources>

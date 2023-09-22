@@ -4,7 +4,14 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.ui.test.junit4.AndroidTestRule
 import androidx.compose.ui.test.junit4.ComposeTestRule
 import androidx.compose.ui.unit.dp
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import com.github.luismendes070.tictactoegame.logic.TicTacToeGame
+import com.github.luismendes070.tictactoegame.ui.MainActivity
 // import com.example.lazyverticalgrid.LazyVerticalGrid
 import com.github.luismendes070.tictactoegame.ui.board.TicTacToeGame
 import com.github.luismendes070.tictactoegame.ui.board.createLazyVerticalGrid
@@ -21,6 +28,20 @@ class LazyVerticalGridInstrumentedTest {
 
     @get:Rule
     val composeTestRule = ComposeTestRule()
+
+    fun testWin() {
+        // Launch the activity under test.
+        // launchActivity<MainActivity>()
+
+        // Click on the grid items to create the winning pattern.
+        onView(withId(R.id.grid_item_11)).perform(click())
+        onView(withId(R.id.grid_item_22)).perform(click())
+        onView(withId(R.id.grid_item_33)).perform(click())
+
+        // Check if the game is won.
+        onView(withId(R.id.text_view_winner)).check(matches(isDisplayed()))
+        onView(withId(R.id.text_view_winner)).check(matches(withText("X")))
+    }
 
     @Test
     fun testLazyVerticalGrid() {

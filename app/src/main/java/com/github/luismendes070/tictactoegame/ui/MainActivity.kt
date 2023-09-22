@@ -17,6 +17,7 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.view.MenuItem
 import android.widget.GridLayout
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -61,7 +62,22 @@ class MainActivity : AppCompatActivity() {
                     ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 100)
 
                 } else {
-                    startGame()
+                    // startGame()
+
+                    // Bard
+                    val grid = LazyVerticalGrid(this) {
+                        item(R.id.grid_item_11)
+                        item(R.id.grid_item_12)
+                        item(R.id.grid_item_13)
+                        item(R.id.grid_item_21)
+                        item(R.id.grid_item_22)
+                        item(R.id.grid_item_23)
+                        item(R.id.grid_item_31)
+                        item(R.id.grid_item_32)
+                        item(R.id.grid_item_33)
+                    }
+
+                    setContentView(grid)
 
                     // Do something when the button is clicked
                     Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
