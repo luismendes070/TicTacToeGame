@@ -4,6 +4,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.ui.test.junit4.AndroidTestRule
 import androidx.compose.ui.test.junit4.ComposeTestRule
 import androidx.compose.ui.unit.dp
+import androidx.test.core.app.ActivityScenario.launch
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -32,6 +33,9 @@ class LazyVerticalGridInstrumentedTest {
     fun testWin() {
         // Launch the activity under test.
         // launchActivity<MainActivity>()
+
+        // https://stackoverflow.com/questions/55433101/what-do-i-need-to-import-to-use-launchactivity-in-unittests
+        val activityScenario = launch(MainActivity::class.java)
 
         // Click on the grid items to create the winning pattern.
         onView(withId(R.id.grid_item_11)).perform(click())
