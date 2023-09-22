@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity() {
                     ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 100)
 
                 } else {
-                    // startGame()
 
                     // Bard
                     val grid = LazyVerticalGrid(this) {
@@ -78,6 +77,8 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     setContentView(grid)
+
+                    startGame()
 
                     // Do something when the button is clicked
                     Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
