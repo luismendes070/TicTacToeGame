@@ -1,7 +1,7 @@
 package com.github.luismendes070.tictactoegame
 // Bard
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.ui.test.junit4.AndroidTestRule
+// import androidx.compose.ui.test.junit4.AndroidTestRule
 import androidx.compose.ui.test.junit4.ComposeTestRule
 import androidx.compose.ui.unit.dp
 import androidx.test.core.app.ActivityScenario.launch
